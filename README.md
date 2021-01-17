@@ -13,7 +13,7 @@
 - To build prerequisites run *./build_macos.sh*
 
 ## Linux
-- To build prerequisites run *./build_linux.sh* (EXPERIMENTAL - tested just that it builds and links on Ubuntu 20.04 LTS with WSL2)
+- To build prerequisites run *./build_linux.sh*
 
 
 ## Usage
