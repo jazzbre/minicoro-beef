@@ -1,0 +1,7 @@
+FileVersion = 1
+Dependencies = {corlib = "*", minicoro-beef = "*"}
+
+[Project]
+Name = "example"
+TargetType = "BeefGUIApplication"
+StartupObject = "example.Program"

@@ -1,0 +1,6 @@
+[submodule "submodules/minicoro"]
+	path = submodules/minicoro
+	url = https://github.com/edubart/minicoro.git
+[submodule "submodules/bx"]
+	path = submodules/bx
+	url = https://github.com/bkaradzic/bx.git

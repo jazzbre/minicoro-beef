@@ -1,0 +1,41 @@
+FileVersion = 1
+Dependencies = {corlib = "*"}
+
+[Project]
+Name = "minicoro-beef"
+
+[Configs.Debug.Win64]
+LibPaths = ["$(ProjectDir)\\.build\\win64_vs2019\\bin\\minicoroDebug.lib"]
+
+[Configs.Release.Win64]
+LibPaths = ["$(ProjectDir)\\.build\\win64_vs2019\\bin\\minicoroRelease.lib"]
+
+[Configs.Paranoid.Win64]
+LibPaths = ["$(ProjectDir)\\.build\\win64_vs2019\\bin\\minicoroRelease.lib"]
+
+[Configs.Test.Win64]
+LibPaths = ["$(ProjectDir)\\.build\\win64_vs2019\\bin\\minicoroRelease.lib"]
+
+[Configs.Debug.macOS]
+LibPaths = ["$(ProjectDir)\\.build\\osx-x64\\bin\\libminicoroDebug.a"]
+
+[Configs.Release.macOS]
+LibPaths = ["$(ProjectDir)\\.build\\osx-x64\\bin\\libminicoroRelease.a"]
+
+[Configs.Paranoid.macOS]
+LibPaths = ["$(ProjectDir)\\.build\\osx-x64\\bin\\libminicoroRelease.a"]
+
+[Configs.Test.macOS]
+LibPaths = ["$(ProjectDir)\\.build\\osx-x64\\bin\\libminicoroRelease.a"]
+
+[Configs.Debug.Linux64]
+LibPaths = ["$(ProjectDir)\\.build\\linux64_gcc\\bin\\libminicoroDebug.a"]
+
+[Configs.Release.Linux64]
+LibPaths = ["$(ProjectDir)\\.build\\linux64_gcc\\bin\\libminicoroRelease.a"]
+
+[Configs.Paranoid.Linux64]
+LibPaths = ["$(ProjectDir)\\.build\\linux64_gcc\\bin\\libminicoroRelease.a"]
+
+[Configs.Test.Linux64]
+LibPaths = ["$(ProjectDir)\\.build\\linux64_gcc\\bin\\libminicoroRelease.a"]
