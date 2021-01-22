@@ -18,6 +18,8 @@ namespace minicoro
 		{
 			Callback = callback;
 			desc = mco_desc_init( => Main, stackSize);
+			desc.malloc_cb = => AllocateCallback;
+			desc.free_cb = => FreeCallback;
 			desc.user_data = Internal.UnsafeCastToPtr(this);
 			var res = mco_create(&co, &desc);
 			if (res != .MCO_SUCCESS)
@@ -34,7 +36,7 @@ namespace minicoro
 
 		public void Resume()
 		{
-			if (!IsValid)
+			if (!IsValid || !IsRunning)
 			{
 				return;
 			}
@@ -50,6 +52,18 @@ namespace minicoro
 		{
 			var coroutine = Internal.UnsafeCastToObject(mco_get_user_data(co)) as Coroutine;
 			coroutine.Callback();
+		}
+
+		private static void* AllocateCallback(uint size, void* allocatorData)
+		{
+			var ptr = Internal.Malloc((int)size);
+			GC.Mark(ptr, (int)size);
+			return ptr;
+		}
+
+		private static void FreeCallback(void* ptr, void* allocatorData)
+		{
+			Internal.Free(ptr);
 		}
 
 		/* Coroutine states. */
