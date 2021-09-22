@@ -57,7 +57,7 @@ namespace minicoro
 		private static void* AllocateCallback(uint size, void* allocatorData)
 		{
 			var ptr = Internal.Malloc((int)size);
-			GC.Mark(ptr, (int)size);
+			//GC.Mark(ptr, (int)size);
 			return ptr;
 		}
 
